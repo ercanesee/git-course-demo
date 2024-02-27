@@ -1,0 +1,146 @@
+#Git version kontrolü
+git --version
+
+#Git reposunu oluşturmak için.
+
+git init
+
+#Versiyonlamımızın kim tarafından yapıldığını gösterebilmek için
+
+git config user.name "Ercan" --local
+git config user.email "ercan.ese@hotmail.com" --local
+
+#görüntülemek istersek.
+.git klasörü altındaki config dosyasına baklabilir.
+
+git config --list --local #--global --system
+
+
+#help dosyasını görüntülemek için
+
+git config --help
+git status --help
+
+#dosyaları izleyebilmek için
+
+git add .
+git add -A
+git add --all
+
+#tek bir dosya eklemel için
+
+git add <dosyaismi>
+
+
+#bir adet daha dosya ekleyim.
+#var olan bir dosyada değişiklik yapalım.
+#status komutunun sort haliyle değişiklikleri görelim.
+#ve en sonda tüm dosyaları add komutu ile ekleyerek.
+#ilk commit imizi atalım.
+
+#versiyonlama yapmak için.
+git add .
+git commit -m "First PR" 
+
+#bir dosyanın içeriğini değiştirin.
+#ve staged'a göndermeden farklılığını kontrol edin.
+#bu dosyayı staged area ya göndermenizi ve 
+#tekrar diff kontrolü yapmanızı istiyorum.
+
+#commit ve dosyalar arasındaki farkları görebilmek için.
+git diff --staged #staged
+git diff #working
+
+
+#working 
+git restore . #dosya ismi
+git restore --staged dosya ismi
+
+#branch oluşturma 
+
+git branch <branchadi>
+git checkout <branchadi>
+
+
+git checkout -b <branchadi>
+
+#master branchi zaten var.
+#bana dev branchi oluşturun ve içerisinde bir dosyayı değiştirerek
+#versiyonlayın commitleyin 
+#sonrasında master branchine geri dönerek
+#değişikliğinizin var olup olmadığını kontrol edin.
+
+
+#dev adında bir branch oluşturmuştunuz.
+#bunun içerisine sizde pos.html dosyası oluşturun.
+
+git checkout dev
+echo "test" >> pos.html
+
+git add .
+git status 
+git commit -am "pos add"
+
+
+git checkout master
+git merge dev
+
+git log --oneline 
+
+
+#git ignore dosyası work dirdeki dosyalardan hangilerini izlememeiz gerektiğini belirlediğimiz
+#dosya
+
+echo "ARG"  >> Dockerfile
+git status
+
+echo "Dockerfile"  >> .gitignore
+
+git status 
+
+
+#commiti geri almak için
+
+git reset <commitid> # değişiklikleri korur
+git reset <commitid> --hard # tüm değişlikleri siler.
+
+#bir adet dosya oluşturarak commit atın 
+#ve sonrasında bir önceki attıgınız commite geri soft olarak dönün.
+
+
+git remote add origin <url>
+git  push -u origin master --all
+
+git push origin master
+
+
+git clone <url>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
